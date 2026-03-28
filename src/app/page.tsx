@@ -146,17 +146,20 @@ export default function Home() {
         </section>
 
         <section className="section-wrap pt-0" id="book-session">
-          <div className="panel">
+          <div className="panel overflow-hidden px-4 py-6 sm:p-6">
             <h2 className="heading-section">Book Your 60-Minute Financial Clarity Session</h2>
             <p className="mt-3 body-copy">
               Choose a time that works for you. Sessions are virtual, focused, and educational.
             </p>
             {calendlyUrl ? (
-              <iframe
-                className="mt-6 h-[700px] w-full rounded-xl border border-line bg-surface"
-                src={calendlyUrl}
-                title="Schedule your Financial Clarity Session"
-              />
+              <div className="mt-6 -mx-4 overflow-hidden rounded-xl border border-line bg-surface sm:mx-0">
+                <iframe
+                  className="block h-190 w-full border-0 bg-surface sm:h-175"
+                  loading="lazy"
+                  src={calendlyUrl}
+                  title="Schedule your Financial Clarity Session"
+                />
+              </div>
             ) : (
               <div className="mt-6 rounded-xl border border-dashed border-line bg-surface p-5 text-muted">
                 Add your Calendly link in NEXT_PUBLIC_CALENDLY_EMBED_URL to enable on-page
