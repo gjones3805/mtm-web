@@ -29,6 +29,22 @@ body {
   line-height: 1.5;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121427;
+    --surface: #1b1e39;
+    --foreground: #eceeff;
+    --muted: #b7bceb;
+    --brand: #8e88dd;
+    --brand-strong: #a29cef;
+    --line: #343960;
+  }
+
+  body {
+    color-scheme: dark;
+  }
+}
+
 .page-shell {
   background:
     radial-gradient(circle at 10% 10%, rgba(97, 90, 169, 0.12), transparent 36%),
@@ -36,12 +52,29 @@ body {
     var(--background);
 }
 
+@media (prefers-color-scheme: dark) {
+  .page-shell {
+    background:
+      radial-gradient(circle at 12% 8%, rgba(142, 136, 221, 0.2), transparent 38%),
+      radial-gradient(circle at 88% 4%, rgba(101, 93, 182, 0.16), transparent 42%),
+      var(--background);
+  }
+}
+
 .section-wrap {
   @apply mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-20;
 }
 
 .eyebrow {
-  @apply mb-4 inline-flex rounded-full border border-line bg-white/85 px-3 py-1 text-xs tracking-[0.12em] text-muted uppercase;
+  @apply mb-4 inline-flex rounded-full border border-line bg-surface/90 px-3 py-1 text-xs tracking-[0.12em] text-brand-strong uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  .eyebrow {
+    background: rgba(142, 136, 221, 0.2);
+    border-color: rgba(162, 156, 239, 0.5);
+    color: #f1f2ff;
+  }
 }
 
 .heading-main {
@@ -68,4 +101,14 @@ body {
 
 .btn-secondary {
   @apply inline-flex items-center justify-center rounded-full border border-foreground px-6 py-3 text-base font-semibold text-foreground transition hover:bg-foreground hover:text-white;
+}
+
+.brand-logo {
+  filter: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .brand-logo {
+    filter: brightness(1.18) saturate(1.06) drop-shadow(0 2px 12px rgba(94, 88, 186, 0.45));
+  }
 }

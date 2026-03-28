@@ -57,7 +57,7 @@ export default function EmailSignupForm() {
         <label className="flex flex-col gap-2 text-sm font-semibold text-foreground">
           First name (optional)
           <input
-            className="rounded-xl border border-line bg-white px-4 py-3 text-base font-normal focus:border-brand focus:outline-none"
+            className="rounded-xl border border-line bg-surface px-4 py-3 text-base font-normal text-foreground placeholder:text-muted focus:border-brand focus:outline-none"
             type="text"
             name="firstName"
             placeholder="Alex"
@@ -67,7 +67,7 @@ export default function EmailSignupForm() {
         <label className="flex flex-col gap-2 text-sm font-semibold text-foreground">
           Email
           <input
-            className="rounded-xl border border-line bg-white px-4 py-3 text-base font-normal focus:border-brand focus:outline-none"
+            className="rounded-xl border border-line bg-surface px-4 py-3 text-base font-normal text-foreground placeholder:text-muted focus:border-brand focus:outline-none"
             type="email"
             name="email"
             placeholder="you@example.com"
