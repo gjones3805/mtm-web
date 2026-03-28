@@ -11,7 +11,7 @@ export default function Home() {
           <a aria-label="mediocre to masterful home" className="flex items-center" href="#top">
             <Image
               alt="mediocre to masterful logo"
-              className="hidden h-auto w-[320px] md:block"
+              className="brand-logo hidden h-auto w-[320px] md:block"
               height={59}
               priority
               src="/mediocretomasterful_logo.png"
@@ -19,7 +19,7 @@ export default function Home() {
             />
             <Image
               alt="mediocre to masterful mark"
-              className="block h-auto w-12 md:hidden"
+              className="brand-logo block h-auto w-12 md:hidden"
               height={60}
               priority
               src="/logo.png"
@@ -32,7 +32,7 @@ export default function Home() {
               <a href="#what-you-get">Session</a>
               <a href="#disclaimer">Disclaimer</a>
             </nav>
-            <span className="rounded-full border border-line bg-white px-3 py-1 text-xs font-semibold text-muted">
+            <span className="rounded-full border border-line bg-surface px-3 py-1 text-xs font-semibold text-muted">
               Educational only - not advisory
             </span>
           </div>
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="mb-5 mt-2">
             <Image
               alt="mediocre to masterful"
-              className="h-auto w-[300px] opacity-95 md:w-[380px]"
+              className="brand-logo h-auto w-[300px] opacity-95 md:w-[380px]"
               height={79}
               src="/mediocretomasterful_logo.png"
               width={400}
@@ -65,7 +65,7 @@ export default function Home() {
               Join the Email List
             </a>
           </div>
-          <p className="mt-5 max-w-3xl rounded-xl border border-line bg-white/80 px-4 py-3 text-sm text-muted">
+          <p className="mt-5 max-w-3xl rounded-xl border border-line bg-surface/90 px-4 py-3 text-sm text-muted">
             Disclaimer: Content and sessions are for educational purposes only. mediocre to
             masterful is not a licensed financial advisor company and does not provide investment,
             legal, or tax advice.
@@ -153,12 +153,12 @@ export default function Home() {
             </p>
             {calendlyUrl ? (
               <iframe
-                className="mt-6 h-[700px] w-full rounded-xl border border-line bg-white"
+                className="mt-6 h-[700px] w-full rounded-xl border border-line bg-surface"
                 src={calendlyUrl}
                 title="Schedule your Financial Clarity Session"
               />
             ) : (
-              <div className="mt-6 rounded-xl border border-dashed border-line bg-white p-5 text-muted">
+              <div className="mt-6 rounded-xl border border-dashed border-line bg-surface p-5 text-muted">
                 Add your Calendly link in NEXT_PUBLIC_CALENDLY_EMBED_URL to enable on-page
                 scheduling.
               </div>
