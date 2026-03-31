@@ -25,13 +25,23 @@
 
 ## Stripe Integration Instructions (Phase 1.1)
 1. Create a Stripe product named Financial Clarity Session.
-2. Choose one-time payment and create a Checkout payment link.
-3. Add a post-booking redirect from Calendly confirmation page to Stripe payment link, or route users to Stripe before scheduling.
-4. Add cancellation/refund terms near the payment call-to-action.
-5. Keep legal language beside payment actions:
+2. Create a one-time Price and copy its Price ID to `STRIPE_PRICE_ID`.
+3. Add `STRIPE_SECRET_KEY` to environment config.
+4. Create Stripe promotion codes for coupon entry and campaign discounts.
+5. Optional: create a campaign promotion code for targeted links and save it as `STRIPE_PROMO_CODE_REGISTER`.
+6. Use the Register button flow (`POST /api/create-checkout-session`) as the default conversion path.
+7. For targeted campaign links, use `/api/create-checkout-session?campaignKey=register`.
+8. Keep legal language beside payment actions:
    - Educational service only
    - Not financial advice
    - No investment guarantees
+
+## Payment to Scheduling Flow
+1. User clicks Register Now.
+2. Site calls `/api/create-checkout-session` and redirects to Stripe Checkout.
+3. User can enter a promo code directly in Checkout.
+4. On payment success, Stripe redirects to `/schedule`.
+5. `/schedule` renders scheduler iframe from `NEXT_PUBLIC_ZOOM_SCHEDULER_EMBED_URL`.
 
 ## Email Capture Setup (Mailchimp)
 1. Create an Audience in Mailchimp for MTM updates.

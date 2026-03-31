@@ -1,9 +1,8 @@
 import EmailSignupForm from "@/components/email-signup-form";
+import RegisterNowCta from "@/components/register-now-cta";
 import Image from "next/image";
 
 export default function Home() {
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_EMBED_URL;
-
   return (
     <div className="page-shell flex flex-1 flex-col">
       <header className="sticky top-0 z-20 border-b border-line bg-surface/95 backdrop-blur">
@@ -57,10 +56,8 @@ export default function Home() {
           <p className="body-copy mt-6 max-w-2xl">
             Clear, practical guidance to help you take confident next steps with your finances.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a className="btn-primary" href="#book-session">
-              Book a Session
-            </a>
+          <div className="mt-8 flex flex-wrap items-start gap-3" id="register">
+            <RegisterNowCta />
             <a className="btn-secondary" href="#email-list">
               Join the Email List
             </a>
@@ -130,8 +127,14 @@ export default function Home() {
           <h2 className="heading-section">How It Works</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
-              { title: "Step 1", body: "Book your 60-minute Financial Clarity Session." },
-              { title: "Step 2", body: "Meet virtually and walk through your goals and questions." },
+              {
+                title: "Step 1",
+                body: "Register and complete secure Stripe checkout (promo codes accepted).",
+              },
+              {
+                title: "Step 2",
+                body: "After payment, you are redirected to choose a time on the Zoom scheduler page.",
+              },
               {
                 title: "Step 3",
                 body: "Receive a practical action plan for your next financial moves.",
@@ -146,26 +149,15 @@ export default function Home() {
         </section>
 
         <section className="section-wrap pt-0" id="book-session">
-          <div className="panel overflow-hidden px-4 py-6 sm:p-6">
-            <h2 className="heading-section">Book Your 60-Minute Financial Clarity Session</h2>
+          <div className="panel px-4 py-6 sm:p-6">
+            <h2 className="heading-section">Register for Your 60-Minute Financial Clarity Session</h2>
             <p className="mt-3 body-copy">
-              Choose a time that works for you. Sessions are virtual, focused, and educational.
+              Start with Stripe checkout. After payment, you will be redirected to pick your Zoom
+              session time.
             </p>
-            {calendlyUrl ? (
-              <div className="mt-6 -mx-4 overflow-hidden rounded-xl border border-line bg-surface sm:mx-0">
-                <iframe
-                  className="block h-190 w-full border-0 bg-surface sm:h-175"
-                  loading="lazy"
-                  src={calendlyUrl}
-                  title="Schedule your Financial Clarity Session"
-                />
-              </div>
-            ) : (
-              <div className="mt-6 rounded-xl border border-dashed border-line bg-surface p-5 text-muted">
-                Add your Calendly link in NEXT_PUBLIC_CALENDLY_EMBED_URL to enable on-page
-                scheduling.
-              </div>
-            )}
+            <div className="mt-6">
+              <RegisterNowCta />
+            </div>
             <p className="mt-4 text-sm text-muted">
               Educational consultation only. Booking a session does not create an advisor-client
               relationship.
@@ -192,12 +184,13 @@ export default function Home() {
 
         <section className="section-wrap pt-0">
           <div className="rounded-2xl border border-brand/20 bg-gradient-to-r from-[#3a3674] to-[#635dab] px-6 py-10 text-white md:px-10">
-            <h2 className="heading-section text-white">Book Your First Session</h2>
+            <h2 className="heading-section text-white">Register for Your First Session</h2>
             <p className="mt-3 max-w-2xl text-lg text-indigo-100">
-              Get clear direction, practical education, and a focused plan for your next steps.
+              Checkout takes less than a minute. Use promo codes in Stripe, then schedule your
+              Zoom session right after payment.
             </p>
-            <a className="mt-7 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-[#3a3674]" href="#book-session">
-              Book a Financial Clarity Session
+            <a className="mt-7 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-[#3a3674]" href="#register">
+              Register Now
             </a>
           </div>
         </section>
