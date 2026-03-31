@@ -25,6 +25,10 @@ cp .env.example .env.local
 
 3. Add your values in `.env.local`:
 - `NEXT_PUBLIC_CALENDLY_EMBED_URL`
+- `NEXT_PUBLIC_ZOOM_SCHEDULER_EMBED_URL` (preferred scheduler embed URL for `/schedule`)
+- `STRIPE_SECRET_KEY`
+- `STRIPE_PRICE_ID`
+- `STRIPE_PROMO_CODE_REGISTER` (optional campaign promotion code for targeted links)
 - `MAILCHIMP_API_KEY`
 - `MAILCHIMP_AUDIENCE_ID`
 
@@ -46,7 +50,10 @@ npm run dev
 	- How It Works
 	- Disclaimer
 	- Final CTA
-- On-page Calendly booking section for 60-minute Financial Clarity Session.
+- Checkout-first registration flow for the 60-minute Financial Clarity Session.
+- Stripe-powered Register Now checkout flow via `/api/create-checkout-session`.
+- Coupon support in Stripe Checkout (customer-entered promo codes plus optional campaign-based pre-applied discounts).
+- Post-payment redirect to `/schedule` with scheduler iframe embed.
 - Mailchimp-powered email signup form (`/api/subscribe`).
 - Persistent non-advisor disclaimers across key conversion points.
 
@@ -58,6 +65,15 @@ The subscribe endpoint lives at `src/app/api/subscribe/route.ts`.
 - It gracefully handles "Member Exists" responses.
 - It requires API key region suffix format (example: `...-us21`).
 
+## Stripe Checkout Notes
+
+The checkout endpoint lives at `src/app/api/create-checkout-session/route.ts`.
+
+- `POST /api/create-checkout-session` returns a Stripe Checkout URL for the Register button flow.
+- `GET /api/create-checkout-session?campaignKey=register` supports targeted campaign links with pre-applied discounts.
+- `allow_promotion_codes` is enabled so users can enter valid Stripe promo codes directly in Checkout.
+- Successful payment redirects to `/schedule`.
+
 ## Deployment (Vercel)
 
 1. Push repository to GitHub.
@@ -65,7 +81,9 @@ The subscribe endpoint lives at `src/app/api/subscribe/route.ts`.
 3. Add environment variables from `.env.example`.
 4. Deploy.
 5. Validate:
-	 - Calendly widget loads
+	 - Register button opens Stripe Checkout
+	 - Successful payment redirects to `/schedule`
+	 - Scheduler iframe loads on `/schedule`
 	 - Email form submits and double opt-in email is received
 	 - Disclaimer content appears in hero, dedicated section, and footer
 
