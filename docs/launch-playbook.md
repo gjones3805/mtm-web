@@ -4,7 +4,7 @@
 - Next.js (App Router) for a fast, scalable landing page.
 - Tailwind CSS for clean responsive styling and whitespace control.
 - Vercel for easy deployment and preview links.
-- Calendly inline embed for booking conversion.
+- Google Calendar appointment schedule inline embed for booking conversion.
 - Mailchimp API for email capture.
 - Stripe recommended for phase 1.1 payment flow.
 
@@ -15,10 +15,10 @@
 - MTM Market and Money Clarity
 - mediocre to masterful Financial Learning Lab
 
-## Calendly Integration Instructions
-1. In Calendly, create a 60-minute event named Financial Clarity Session.
-2. Copy the event embed URL.
-3. Add it to `.env.local` as `NEXT_PUBLIC_CALENDLY_EMBED_URL`.
+## Google Calendar Integration Instructions
+1. In Google Calendar, create a 60-minute appointment schedule named Financial Clarity Session.
+2. Open the booking page's Sharing options, choose Website embed, then Inline booking page.
+3. Copy the iframe's `src` URL into `.env.local` as `NEXT_PUBLIC_GOOGLE_SCHEDULER_EMBED_URL`. Use the full `calendar.google.com` URL rather than the `calendar.app.google` short link.
 4. Restart the dev server.
 5. Verify the widget loads in the Book section and on mobile.
 6. Keep the educational-only disclaimer visible near booking.
@@ -41,7 +41,7 @@
 2. Site calls `/api/create-checkout-session` and redirects to Stripe Checkout.
 3. User can enter a promo code directly in Checkout.
 4. On payment success, Stripe redirects to `/schedule`.
-5. `/schedule` renders scheduler iframe from `NEXT_PUBLIC_ZOOM_SCHEDULER_EMBED_URL`.
+5. `/schedule` renders the scheduler iframe from `NEXT_PUBLIC_GOOGLE_SCHEDULER_EMBED_URL`.
 
 ## Email Capture Setup (Mailchimp)
 1. Create an Audience in Mailchimp for MTM updates.
