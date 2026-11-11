@@ -133,7 +133,7 @@ export default function Home() {
               },
               {
                 title: "Step 2",
-                body: "After payment, you are redirected to choose a time on the Zoom scheduler page.",
+                body: "After payment, you are redirected to choose a time on the scheduling page.",
               },
               {
                 title: "Step 3",
@@ -152,7 +152,7 @@ export default function Home() {
           <div className="panel px-4 py-6 sm:p-6">
             <h2 className="heading-section">Register for Your 60-Minute Financial Clarity Session</h2>
             <p className="mt-3 body-copy">
-              Start with Stripe checkout. After payment, you will be redirected to pick your Zoom
+              Start with Stripe checkout. After payment, you will be redirected to pick your
               session time.
             </p>
             <div className="mt-6">
@@ -187,7 +187,7 @@ export default function Home() {
             <h2 className="heading-section text-white">Register for Your First Session</h2>
             <p className="mt-3 max-w-2xl text-lg text-indigo-100">
               Checkout takes less than a minute. Use promo codes in Stripe, then schedule your
-              Zoom session right after payment.
+              session right after payment.
             </p>
             <a className="mt-7 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-[#3a3674]" href="#register">
               Register Now

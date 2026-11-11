@@ -24,8 +24,7 @@ cp .env.example .env.local
 ```
 
 3. Add your values in `.env.local`:
-- `NEXT_PUBLIC_CALENDLY_EMBED_URL`
-- `NEXT_PUBLIC_ZOOM_SCHEDULER_EMBED_URL` (preferred scheduler embed URL for `/schedule`)
+- `NEXT_PUBLIC_GOOGLE_SCHEDULER_EMBED_URL` (Google Calendar inline booking page URL for `/schedule`)
 - `STRIPE_SECRET_KEY`
 - `STRIPE_PRICE_ID`
 - `STRIPE_PROMO_CODE_REGISTER` (optional campaign promotion code for targeted links)
@@ -56,6 +55,15 @@ npm run dev
 - Post-payment redirect to `/schedule` with scheduler iframe embed.
 - Mailchimp-powered email signup form (`/api/subscribe`).
 - Persistent non-advisor disclaimers across key conversion points.
+
+## Google Calendar Scheduling
+
+In Google Calendar, open the booking page's **Sharing options → Website embed**, select
+**Inline booking page**, and copy the URL from the iframe's `src` into
+`NEXT_PUBLIC_GOOGLE_SCHEDULER_EMBED_URL`. Use the full `calendar.google.com` URL, not the
+`calendar.app.google` short sharing link, which cannot be embedded. Restart the dev server after
+changing the setting. On Vercel, set the variable and redeploy; public environment variables are
+captured at build time.
 
 ## Mailchimp API Notes
 
@@ -91,7 +99,7 @@ The checkout endpoint lives at `src/app/api/create-checkout-session/route.ts`.
 
 See `docs/launch-playbook.md` for:
 - Brand name ideas
-- Calendly integration checklist
+- Google Calendar integration checklist
 - Stripe integration plan (phase 1.1)
 - Email capture setup checklist
 - Compliance reminders

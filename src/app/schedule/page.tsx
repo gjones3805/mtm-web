@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function SchedulePage() {
-  const schedulerUrl =
-    process.env.NEXT_PUBLIC_ZOOM_SCHEDULER_EMBED_URL ?? process.env.NEXT_PUBLIC_CALENDLY_EMBED_URL;
+  const schedulerUrl = process.env.NEXT_PUBLIC_GOOGLE_SCHEDULER_EMBED_URL;
 
   return (
     <div className="page-shell flex min-h-screen flex-col">
@@ -35,24 +34,32 @@ export default function SchedulePage() {
 
       <main className="flex-1">
         <section className="section-wrap">
-          <h1 className="heading-main max-w-4xl">Payment Received. Schedule Your Zoom Session.</h1>
+          <h1 className="heading-main max-w-4xl">Payment Received. Schedule Your Google Calendar Session.</h1>
           <p className="body-copy mt-6 max-w-3xl">
             Thank you for registering. Choose a time below to book your 60-minute Financial
             Clarity Session.
           </p>
 
           {schedulerUrl ? (
-            <div className="mt-6 -mx-4 overflow-hidden rounded-xl border border-line bg-surface sm:mx-0">
-              <iframe
-                className="block h-190 w-full border-0 bg-surface sm:h-175"
-                loading="lazy"
-                src={schedulerUrl}
-                title="Schedule your Financial Clarity Session"
-              />
-            </div>
+            <>
+              <div className="mt-6 -mx-4 overflow-hidden rounded-xl border border-line bg-surface sm:mx-0">
+                <iframe
+                  className="block h-190 w-full border-0 bg-surface sm:h-175"
+                  loading="lazy"
+                  src={schedulerUrl}
+                  title="Schedule your Financial Clarity Session"
+                />
+              </div>
+              <p className="mt-4 text-sm text-muted">
+                Having trouble viewing the scheduler?{" "}
+                <a className="underline" href={schedulerUrl} target="_blank" rel="noopener noreferrer">
+                  Open the booking page in a new tab.
+                </a>
+              </p>
+            </>
           ) : (
             <div className="mt-6 rounded-xl border border-dashed border-line bg-surface p-5 text-muted">
-              Add NEXT_PUBLIC_ZOOM_SCHEDULER_EMBED_URL in your environment settings to enable the
+              Add NEXT_PUBLIC_GOOGLE_SCHEDULER_EMBED_URL in your environment settings to enable the
               scheduler page embed.
             </div>
           )}
