@@ -11,7 +11,8 @@ export default function EmailSignupForm() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const email = String(formData.get("email") ?? "").trim();
     const firstName = String(formData.get("firstName") ?? "").trim();
 
@@ -39,7 +40,7 @@ export default function EmailSignupForm() {
 
       setState("success");
       setMessage("You are in. Check your inbox to confirm your subscription.");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Subscription failed.";
       setState("error");
