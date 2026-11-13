@@ -49,7 +49,7 @@ npm run dev
 	- How It Works
 	- Disclaimer
 	- Final CTA
-- Checkout-first registration flow for the 60-minute Financial Clarity Session.
+- Checkout-first registration flow for the 40-minute Financial Clarity Session.
 - Stripe-powered Register Now checkout flow via `/api/create-checkout-session`.
 - Coupon support in Stripe Checkout (customer-entered promo codes plus optional campaign-based pre-applied discounts).
 - Post-payment redirect to `/schedule` with scheduler iframe embed.

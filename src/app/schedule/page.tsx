@@ -33,10 +33,10 @@ export default function SchedulePage() {
       </header>
 
       <main className="flex-1">
-        <section className="section-wrap">
+        <section className="section-wrap py-16 md:py-20">
           <h1 className="heading-main max-w-4xl">Payment Received. Schedule Your Google Calendar Session.</h1>
           <p className="body-copy mt-6 max-w-3xl">
-            Thank you for registering. Choose a time below to book your 60-minute Financial
+            Thank you for registering. Choose a time below to book your 40-minute Financial
             Clarity Session.
           </p>
 
