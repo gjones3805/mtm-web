@@ -1,5 +1,6 @@
 import EmailSignupForm from "@/components/email-signup-form";
 import RegisterNowCta from "@/components/register-now-cta";
+import RoiVideo from "@/components/roi-video";
 import Image from "next/image";
 
 export default function Home() {
@@ -39,7 +40,7 @@ export default function Home() {
       </header>
 
       <main className="flex-1" id="top">
-        <section className="section-wrap">
+        <section className="section-wrap pt-16 md:pt-20">
           <span className="eyebrow">Financial Education and Strategy</span>
           <div className="mb-5 mt-2">
             <Image
@@ -69,7 +70,11 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="section-wrap pt-0" id="about">
+        <section className="section-wrap" id="roi-video">
+          <RoiVideo />
+        </section>
+
+        <section className="section-wrap" id="about">
           <div className="panel max-w-4xl">
             <h2 className="heading-section">About MTM</h2>
             <div className="mt-5 space-y-4 body-copy">
@@ -89,7 +94,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-wrap pt-0" id="who-this-is-for">
+        <section className="section-wrap" id="who-this-is-for">
           <h2 className="heading-section">Who This Is For</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {[
@@ -106,7 +111,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-wrap pt-0" id="what-you-get">
+        <section className="section-wrap" id="what-you-get">
           <h2 className="heading-section">What You Get in a Financial Clarity Session</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {[
@@ -123,7 +128,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-wrap pt-0" id="how-it-works">
+        <section className="section-wrap" id="how-it-works">
           <h2 className="heading-section">How It Works</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
@@ -148,9 +153,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-wrap pt-0" id="book-session">
+        <section className="section-wrap" id="book-session">
           <div className="panel px-4 py-6 sm:p-6">
-            <h2 className="heading-section">Register for Your 60-Minute Financial Clarity Session</h2>
+            <h2 className="heading-section">Register for Your 40-Minute Financial Clarity Session</h2>
             <p className="mt-3 body-copy">
               Start with Stripe checkout. After payment, you will be redirected to pick your
               session time.
@@ -165,11 +170,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-wrap pt-0">
+        <section className="section-wrap">
           <EmailSignupForm />
         </section>
 
-        <section className="section-wrap pt-0" id="disclaimer">
+        <section className="section-wrap" id="disclaimer">
           <div className="panel">
             <h2 className="heading-section">Disclaimer</h2>
             <ul className="mt-5 space-y-3 text-lg text-muted">
@@ -182,7 +187,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-wrap pt-0">
+        <section className="section-wrap pb-16 md:pb-20">
           <div className="rounded-2xl border border-brand/20 bg-gradient-to-r from-[#3a3674] to-[#635dab] px-6 py-10 text-white md:px-10">
             <h2 className="heading-section text-white">Register for Your First Session</h2>
             <p className="mt-3 max-w-2xl text-lg text-indigo-100">

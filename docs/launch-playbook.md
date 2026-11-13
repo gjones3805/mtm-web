@@ -16,7 +16,7 @@
 - mediocre to masterful Financial Learning Lab
 
 ## Google Calendar Integration Instructions
-1. In Google Calendar, create a 60-minute appointment schedule named Financial Clarity Session.
+1. In Google Calendar, create a 40-minute appointment schedule named Financial Clarity Session.
 2. Open the booking page's Sharing options, choose Website embed, then Inline booking page.
 3. Copy the iframe's `src` URL into `.env.local` as `NEXT_PUBLIC_GOOGLE_SCHEDULER_EMBED_URL`. Use the full `calendar.google.com` URL rather than the `calendar.app.google` short link.
 4. Restart the dev server.
